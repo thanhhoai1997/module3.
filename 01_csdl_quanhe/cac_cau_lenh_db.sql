@@ -49,8 +49,62 @@ select* from teacher;
 -- SU DUNG DROP DE XOA DATABASE OR TABLE : 
 drop database student_management;
 drop table teacher;
+ use quanlydaotao1;
+ delimiter $$
+ create procedure nhanvien1()
+ begin 
+ select*from nhanvien;
+ end$$
+ delimiter ;
+ call nhanvien1;
+ 
+ create table bill(
+ id int primary key auto_increment,
+ userID int,
+ productID int,
+ quantity int
+ );
 
+ 
+ create table product(
+ id int primary key auto_increment,
+ product_name varchar(50),
+ quantity int
+ );
+ 
+ insert into product (product_name,quantity) values ("thuoc la",1000),("kem danh rang",500);
+  insert into bill (userID,productID,quantity) values (1,1,10);
+  update product set quantity  = 1000 - 10 where id = 1;
+  
+  delimiter $$
+  create procedure  taobill( in inUserID int,in inProductID int, in inQuantity int)
+  begin
+  insert into bill (userID,productID,quantity) values (inUserID,inProductID,inQuantity);
+  update product set quantity = quantity - inQuantity where id = 1;
+  
+  end$$
+  delimiter ;
+   call taobill(4,1,10);
+   
+   delimiter $$ 
+   create trigger before_bill_create before insert  on bill for each row
+   begin
+		update product set quantity = quantity - new.quantity where id = new.productID;
+   end$$
+   
+   delimiter ;
+   insert into  bill (userID,productID,quantity) values(1,1,20);
+   delimiter $$
+   create trigger before_bill_update before  update on bill for each row
+begin
+	update product set quantity = quantity - old.quantity +  new.quantity where id = old.productID; 
+end$$
+delimiter ;
+update bill set quantity = 150  where id = 6;
 
+   
+   
+   
 
 
 

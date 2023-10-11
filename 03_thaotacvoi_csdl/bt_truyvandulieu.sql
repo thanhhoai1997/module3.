@@ -11,3 +11,5 @@ select s.student_name,su.sub_name,m.mark from sub_ject  as su
 inner join mark as m on su.sub_id = m.sub_id
 inner join student as s on s.student_id = m.student_id
 order by m.mark desc , s.student_name asc;
+
+
