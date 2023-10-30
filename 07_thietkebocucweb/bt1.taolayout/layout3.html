@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div-1 {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 1fr 1fr 4fr 1fr;
+            gap: 2vh;
+            grid-template-areas:
+            "header header header "
+            "nav nav nav"
+            "div div aside"
+            "footer footer footer"
+
+        ;
+        }
+        header {
+            grid-area: header;
+            background-color: #CDCDCD;
+        }
+        nav {
+            grid-area: nav;
+            background-color: red;
+        }
+        #div-2 {
+            grid-area: div;
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            gap: 2vh;
+        }
+        aside {
+            grid-area: aside;
+            background-color: darkcyan;
+        }
+        footer{
+            grid-area: footer;
+            background-color: #CDCDCD;
+        }
+        #div-2 section {
+            grid-row: 1/2;
+            background-color: greenyellow;
+        }
+        #div-2 article {
+            grid-row: 2/3;
+            background-color: lightsalmon;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<div id="div-1">
+    <header></header>
+    <nav></nav>
+    <div id="div-2">
+        <section></section>
+        <article></article>
+    </div>
+    <aside></aside>
+    <footer></footer>
+</div>
+
 </body>
 </html>

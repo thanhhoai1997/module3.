@@ -1,10 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            display: block;
+
+        }
+        li{
+            background-color: black;
+            list-style: none;
+            width: 10%;
+            height: 3vh;
+            padding: 1vh;
+            position: relative;
+
+
+        }
+        li:hover{
+            background-color: red;
+        }
+        .li-1 ul {
+            display: none;
+
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: larger;
+            position: relative;
+            left: 2vh;
+        }
+        #menu ul li:hover ul{
+            display: block;
+            position: absolute;
+
+            top: 0;
+            left: 70%;
+        }
+       .li-1 ul li {
+           width: 100%;
+
+       }
+       h3{
+           padding-left: 3%;
+       }
+
+
+
+    </style>
 </head>
 <body>
-$END$
+<h3>ACCP i10</h3>
+<div id="menu">
+    <ul>
+        <li class="li-1"><a href="#">Sem 1</a>
+            <ul>
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li class="li-1"><a href="#">Sem 2 </a>
+            <ul>
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+        <li class="li-1"><a href="#">Sem 3</a></li>
+        <li class="li-1"><a href="#">Sem 4</a></li>
+    </ul>
+</div>
 </body>
 </html>

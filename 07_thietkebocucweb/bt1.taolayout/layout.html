@@ -1,10 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+      p {
+          margin: 0;
+          position: relative;
+          left: 50%;
+          top: 50%;
+          font-variant: small-caps;
+          font-weight: bold;
+          font-size: 150%;
+      }
+
+      header {
+          height: 10vh;
+          background-color: red;
+
+      }
+      nav {
+          height: 10vh;
+          background-color: yellow;
+      }
+      div {
+          display: flex;
+          height: 70vh;
+
+      }
+      div div {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+      }
+      aside {
+          flex: 1;
+          background-color: gray;
+      }
+      section{
+          flex: 1;
+          background-color: orange;
+
+      }
+      article {
+          flex: 1;
+          background-color: darkcyan;
+      }
+      footer {
+          height: 10vh;
+          background-color: lightsalmon ;
+      }
+  </style>
 </head>
 <body>
-$END$
+<header><p>Header</p></header>
+<nav><p>Nav</p></nav>
+<div>
+    <div>
+        <section><p>Section</p></section>
+        <article><p>Article</p></article>
+    </div>
+    <aside><p>Aside</p></aside>
+</div>
+<footer><p>Aside</p></footer>
+
 </body>
 </html>
