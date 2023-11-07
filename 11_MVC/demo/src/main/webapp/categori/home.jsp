@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -7,10 +8,29 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Code</td>
+
+</tr>
+<c:forEach var="category" items="${categories}">
+
+
+        <tr>
+            <td>${category.id}</td>
+            <td>${category.name}</td>
+            <td>${category.code}</td>
+
+        </tr>
+
+</c:forEach>
+</table>
+
+</body>
 </html>

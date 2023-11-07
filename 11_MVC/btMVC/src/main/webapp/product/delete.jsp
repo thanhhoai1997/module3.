@@ -7,10 +7,41 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Delete Product</title>
+</head>
+<body>
+<p>
+    <a href="/product">Back to product list</a>
+</p>
+<form method="post">
+    <fieldset>
+        <legend>Info Product</legend>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>${product.name}</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>${product.price}</td>
+            </tr>
+            <tr>
+                <td>Describe</td>
+                <td>${product.describe}</td>
+            </tr>
+            <tr>
+                <td>Producer</td>
+                <td>${product.producer}</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Delete"></td>
+                <td><a href="/product">Back to product list</a> </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+
+</body>
 </html>

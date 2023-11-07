@@ -41,6 +41,10 @@ public class UserServlet extends HttpServlet {
                     updateUser(req,resp);
                 case "search":
                     searchCountry(req,resp);
+
+                    break;
+                case "delete":
+                    deleteUser(req,resp);
                     break;
 
 
@@ -112,34 +116,28 @@ public class UserServlet extends HttpServlet {
         if (action == null){
             action = "";
         }
-        try {
-            switch (action){
-                case "create":
-                    showNewForm(req,resp);
-                    break;
-                case "edit":
-                    showEditForm(req,resp);
-                    break;
-                case "delete":
-                    deleteUser(req,resp);
-                    break;
-                case "search":
-                    showSearchCountry(req,resp);
-                    break;
-                case "sort":
-                    sortName(req,resp);
-                default:
-                    listUser(req,resp);
-                    break;
-            }
-        }catch (SQLException e){
-            throw new  ServletException(e);
+        switch (action){
+            case "create":
+                showNewForm(req,resp);
+                break;
+            case "edit":
+                showEditForm(req,resp);
+                break;
+
+            case "search":
+                showSearchCountry(req,resp);
+                break;
+            case "arrange":
+                sortName(req,resp);
+            default:
+                listUser(req,resp);
+                break;
         }
 
     }
 
     private void sortName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("user",iUserDao.arrangeName());
+        req.setAttribute("listUser",iUserDao.arrangeName());
         RequestDispatcher dispatcher = req.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(req,resp);
     }
